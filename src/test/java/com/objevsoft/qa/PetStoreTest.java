@@ -5,12 +5,16 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
-public class APITest {
+public class PetStoreTest {
 
     @Test
-    public void testApiConnectivity() {
-        String url = "https://www.google.com/search?q=test";
-        Response response = given().get(url);
+    public void testGetPet() {
+        Response response = given()
+            .baseUri("https://petstore.swagger.io/v2")
+            .when()
+            .get("/pet/findByStatus?status=available");
+
         Assert.assertEquals(response.statusCode(), 200);
     }
 }
+

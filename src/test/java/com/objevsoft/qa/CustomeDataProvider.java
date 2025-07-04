@@ -1,4 +1,4 @@
-package com.objevsoft.utils;
+package com.objevsoft.qa;
 
 import org.testng.annotations.DataProvider;
 
